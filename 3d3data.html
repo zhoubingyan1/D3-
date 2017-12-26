@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>d3practise</title>
+	<style>
+		body{ font: 12px Arial;}
+		path{
+		    stroke: steelblue;
+		    stroke-width: 2;
+		    fill: none;
+		}
+		.axis path,
+		.axis line{
+		    fill: none;
+		    stroke: grey;
+		    stroke-width: 1;
+		    shape-rendering: crispEdges;
+		}
+	</style>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<p>apple</p>
+	<p>pear</p>
+	<p>banana</p>
+	<script>
+		var dataset = ["I like dogs","I like cats","I like snakes"];
+		var body = d3.select("body");
+		var p = body.selectAll("p");
+		p.data(dataset).text(function(d,i){
+			return d;
+		})
+	</script>
+</body>
+</html>
